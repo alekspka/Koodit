@@ -1,4 +1,9 @@
 # Ensimmäiset python-koodit
 
-print("moikka maailma!")
-print("auttakaa")
+
+
+nimi = input("Mikä on nimesi? ")
+
+print(f"Hyvää päivää, {nimi}!")
+
+print("Olet voittanut miljoona euroa!")
