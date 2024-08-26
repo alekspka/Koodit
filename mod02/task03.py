@@ -6,7 +6,7 @@ korkeus = float(input("Mikä on suorakulmion korkeus?(m)"))
 piiri = kanta * 2 + korkeus * 2
 pinta_ala = kanta * korkeus
 
-print(f"Suorakulmion piiri on: + {piiri:.0f} metriä + ja pinta-ala: + {pinta_ala:.0f} neliömetriä")
+print(f"Suorakulmion piiri on: {piiri:.0f} metriä ja pinta-ala: {pinta_ala:.0f} neliömetriä")
 
 
 
