@@ -2,3 +2,6 @@
 #   kolmenumeroisen koodin, jonka kukin numeromerkki on väliltä 0..9.
 #   nelinumeroisen koodin, jonka kukin numeromerkki on väliltä 1..6.
 
+import random
+
+kolminumeroinen koodi =
