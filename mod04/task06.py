@@ -2,10 +2,12 @@
 # jos pisteiden koordinaatit toteuttavat epäyhtälön x^2+y^2<1, piste on ympyrässä.
 import random
 
-#TODO
+
 N = 100 # pisteiden kokonaismäärä
 n = 0 # ympyrään osuvien pisteiden lukumäärä
 iterator = 0
+
+input("Syötä pisteiden kokonaismäärä: ")
 
 while iterator < N:
     iterator += 1
