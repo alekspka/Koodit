@@ -14,6 +14,31 @@ print(f"laskurin arvo lopuksi: {counter}")
 import random
 
 # Ohjelma komentorivikäyttöliittymä
+
+def kukkuu_game():
+    max_count = int(input("Kuinka monta kertaa kukutaan? "))
+    counter = 0
+    while counter < max_count:
+        counter = counter + 1
+        print(f"{counter}. kerran kukkuu")
+    print(f"laskurin arvo lopuksi: {counter}")
+
+def noppa_game():
+    rounds = 1000
+    round_counter = 0
+    total_rolls = 0
+    while round_counter < rounds:
+        round_counter += 1
+        die1 = die2 = roll_counter = 0
+        while die1 < 6 or die2 < 6:
+            roll_counter += 1
+            die1 = random.randint(1, 6)
+            die2 = random.randint(1, 6)
+            print(f"{roll_counter}. Heittojen silmäluvut: {die1} ja {die2}")
+        print(f"Noppaa heitettiin {roll_counter} kertaa.")
+        total_rolls = total_rolls + roll_counter
+    print(f"Kaksi kutosta saatiin keskimäärin {total_rolls / rounds} heitolla per kierros.")
+
 command = ""
 while command != "lopeta":
     command = input("Syötä komento ")
@@ -21,27 +46,9 @@ while command != "lopeta":
         print("Lopetetaan.")
         #break "heittää ulos" silmukasta.
     elif command == "kukkuu":
-        max_count = int(input("Kuinka monta kertaa kukutaan? "))
-        counter = 0
-        while counter < max_count:
-            counter = counter + 1
-            print(f"{counter}. kerran kukkuu")
-        print(f"laskurin arvo lopuksi: {counter}")
+        kukkuu_game()
     elif command == "noppa":
-        rounds = 1000
-        round_counter = 0
-        total_rolls = 0
-        while round_counter < rounds:
-            round_counter += 1
-            die1 = die2 = roll_counter = 0
-            while die1 < 6 or die2 < 6:
-                roll_counter += 1
-                die1 = random.randint(1, 6)
-                die2 = random.randint(1, 6)
-                print(f"{roll_counter}. Heittojen silmäluvut: {die1} ja {die2}")
-            print(f"Noppaa heitettiin {roll_counter} kertaa.")
-            total_rolls = total_rolls + roll_counter
-        print(f"Kaksi kutosta saatiin keskimäärin {total_rolls / rounds} heitolla per kierros.")
+        noppa_game()
     else:
         print("En ymmärrä komentoa. Yritä uudelleen.")
 
