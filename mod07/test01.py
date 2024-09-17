@@ -151,7 +151,7 @@ for i in oppilaat:
 nimi = input("Anna nimi, niin etsin tietoa sanakirjasta jos löytyy: ")
 if nimi in oppilaat:
     print(f"Löytyi oppilas {nimi} ikä hänellä on {oppilaat[nimi]}")
-"""""
+
 
 # Kun olemassa olecaan sanakirjaan lisätään arvo, käytetään sanakirja[avain) = arvo
 # Lisätään uusi oppilas mikäli ei löydy
@@ -159,3 +159,26 @@ if nimi in oppilaat:
 
 oppilaat["Allu"] =  22
 print(oppilaat)
+
+nimet = ["Aleksi", "Jenna"]
+numerot = ["050-5311167","040-50415125"]
+
+print(f"{nimet[0]}, numero: {numerot[0]}")
+
+yhteystiedot = {"Aleksi": "050-5311167", "Jenna": "040-50415125"}
+
+hakusana = input("Puhelinnumerohaku, anna nimi: ")
+
+# Selvitetään ensin oikea indeksi
+index = nimet.index(hakusana)
+print(f"{hakusana}, numero: {numerot[index]}")
+
+# Sanakirjalla, hyödynnetään avainta
+print(f"{hakusana}, numero: {yhteystiedot[hakusana]}")
+"""""
+# extra: moniulotteinen
+yhteystiedot = {
+    "Aleksi": {"puh": "050-5311167", "osoite": "Länsisatamankatu 31"},
+    "Jenna": {"puh" : "040-50415125", "osoite": "Rinteelänkatu 5"}
+}
+print(f"Jennan osoite {yhteystiedot['Jenna']['osoite']}")
