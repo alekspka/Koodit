@@ -11,7 +11,8 @@ class Auto:
         print(f"Auton huippunopeus: {self.maxnopeus}")
         print(f"Tämänhetkinen nopeus: {self.nopeusatm}")
         print(f"Kuljettu matka: {self.kuljettu_matka}")
+        return
 
 
 auto1 = Auto("ABC-123","142 km/h")
-Auto.tulostus()
+auto1.tulostus()
