@@ -28,17 +28,26 @@ class Auto:
 
 
 auto1 = Auto("ABC-123",142)
+auto2 = Auto("EDF-123",250)
 
 auto1.kiihdytys(30)
 auto1.kiihdytys(70)
 auto1.kiihdytys(50)
 
-auto1.tulostus()
+auto2.kiihdytys(30)
+auto2.kiihdytys(70)
+auto2.kiihdytys(50)
 
+auto1.tulostus()
+auto2.tulostus()
 
 print(f"Auton nopeus kiihdytyksen jälkeen: {auto1.nopeusatm} km/h.")
+print(f"Auton nopeus kiihdytyksen jälkeen: {auto2.nopeusatm} km/h.")
 
 auto1.kiihdytys(-200)
+auto2.kiihdytys(-200)
 
 auto1.tulostus()
+auto2.tulostus()
 print(f"Auton nopeus hätäjarrutuksen jälkeen: {auto1.nopeusatm} km/h.")
+print(f"Auton nopeus hätäjarrutuksen jälkeen: {auto2.nopeusatm} km/h.")
