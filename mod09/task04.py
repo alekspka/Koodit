@@ -30,11 +30,9 @@ class Auto:
 
 autot = [Auto(f"ABC-{i+1}", random.randint(100, 200)) for i in range(10)]
 
-kilpailu_kaynnissa = True
-
 tunti = 0
 
-while kilpailu_kaynnissa:
+while True:
     tunti += 1
     print(f"Tunti {tunti}:")
 
@@ -42,8 +40,8 @@ while kilpailu_kaynnissa:
         auto.kiihdyta(random.randint(-10, 15))
         auto.kulje()
 
-        if auto.kuljettu_matka >= 10000:
-                kilpailu_kaynnissa = False
+    if any(auto.kuljettu_matka >= 10000 for auto in autot):
+        break
 
     for auto in autot:
         auto.tulostus()
