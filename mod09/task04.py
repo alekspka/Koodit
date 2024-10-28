@@ -1,23 +1,6 @@
 #autokilpailu
 import random
 
-class Autotalli:
-    def __init__(self):
-        self.autot = []
-    def autot_sisaan(self, auto):
-        for a in self.autot:
-            if a == auto:
-                return
-        self.autot.append(auto)
-
-    def auto_ulos(self, auto):
-        self.autot.remove(auto)
-
-    def tulosta_inventaario(self):
-        print("Autot tallissa:")
-        for auto in self.autot:
-            auto.tulosta_ominaisuudet()
-
 class Auto:
 
     def __init__(self, rekkari, maxnopeus):
@@ -27,14 +10,44 @@ class Auto:
         self.kuljettu_matka = 0
 
     def tulostus(self):
-        print(f"Rekisteritunnus: {self.rekkari}")
-        print(f"Auton huippunopeus: {self.maxnopeus}")
-        print(f"Tämänhetkinen nopeus: {self.nopeusatm}")
-        print(f"Kuljettu matka: {self.kuljettu_matka}")
+        print(f"Rekkari: {self.rekkari}, Huippunopeus: {self.maxnopeus} km/h,"
+              f"Nopeus nyt: {self.nopeusatm}, km/h, Kuljettu matka: {self.kuljettu_matka} kilometriä.")
+
         return
 
+    def kiihdyta(self, nopeuden_muutos):
+        self.nopeusatm = self.nopeusatm + nopeuden_muutos
 
-for i in range(10):
-    uusi_auto = Auto(f"ABC-{i+1}", random.randint(100,200))
-    talli.auto_sisaan(uusi_auto)
-    talli.tulosta_inventaario()
+        if self.nopeusatm > self.maxnopeus:
+            self.nopeusatm = self.maxnopeus
+
+        if self.nopeusatm < 0:
+            self.nopeusatm = 0
+
+    def kulje(self, tunnit=1):
+
+        self.kuljettu_matka += self.nopeusatm * tunnit
+
+autot = [Auto(f"ABC-{i+1}", random.randint(100, 200)) for i in range(10)]
+
+tunti = 0
+
+while True:
+    tunti += 1
+    print(f"Tunti {tunti}:")
+
+    for auto in autot:
+        auto.kiihdyta(random.randint(-10, 15))
+        auto.kulje()
+
+    if any(auto.kuljettu_matka >= 10000 for auto in autot):
+        break
+
+    for auto in autot:
+        auto.tulostus()
+    print("\n")
+
+print("Kilpailu päättyi!")
+print("Lopputulokset:")
+for auto in autot:
+    auto.tulostus()
