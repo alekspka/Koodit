@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Mod01 task 05</title>
+
+</head>
+<body>
+<script>
+  'use scrict';
+  const vuosi = prompt('Anna vuosiluku: ');
+
+  if ((vuosi % 4 === 0 && vuosi %  100 !== 0) || (vuosi % 400 === 0))
+  {
+  document.write(`<p>Vuosi ${vuosi} on karkausvuosi.</p>`);
+  }
+
+
+    else {
+    document.write(`<p>Vuosi ${vuosi} ei ole karkausvuosi.</p>`);
+  }
+
+
+</script>
+</body>
+</html>
