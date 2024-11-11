@@ -2,9 +2,22 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>mod01 task03</title>
 </head>
 <body>
+<script>
+    'use scrict';
+    const num1 = Number(prompt('Anna ensimmäinen kokonaisluku:'));
+    const num2 = Number(prompt('Anna toinen kokonaisluku:'));
+    const num3 = Number(prompt('Anna kolmas kokonaisluku:'));
 
+    const sum = num1 + num2 + num3;
+    const product = num1 * num2 * num3;
+    const average = (sum / 3).toFixed(2);
+
+    document.write(`<p>Summa: ${sum}</p>`);
+    document.write(`<p>Tulo: ${product}</p>`);
+    document.write(`<p>Keskiarvo: ${average}</p>`);
+</script>
 </body>
 </html>
