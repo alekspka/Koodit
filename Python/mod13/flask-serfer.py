@@ -1,6 +1,6 @@
 from flask import Flask, Response, render_template
 import json
-import alkulukulaskuri
+import task01
 
 app = Flask(__name__)
 @app.route('/')
