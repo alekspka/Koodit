@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>mod02 task02</title>
+</head>
+<body>
+<script>
+  'use strict'
+
+const osallistujamäärä = parseInt(prompt('Anna osallistujamäärä: '),10);
+
+const osallistujat = [];
+
+    for (let i = 0; i < osallistujamäärä; i++) {
+        const nimi = prompt(`Anna osallistujan ${i + 1} nimi:`);
+        osallistujat.push(nimi);
+    }
+osallistujat.sort();
+
+        const ol = document.createElement('ol');
+        for (const nimi of osallistujat) {
+            const li = document.createElement('li');
+            li.textContent = nimi;
+            ol.appendChild(li);
+        }
+        document.body.appendChild(ol);
+
+</script>
+
+</body>
+</html>
